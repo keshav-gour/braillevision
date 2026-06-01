@@ -39,7 +39,11 @@ pip install flask flask-cors gtts ultralytics opencv-python
 
 # Start the Flask API server
 python app.py
+```
+### 2. Frontend Setup (React)
+Open a second terminal and navigate to the frontend folder.
 
+```bash
 # Move into the frontend directory
 cd frontend
 
@@ -48,3 +52,4 @@ npm install axios
 
 # Start the React development server
 npm start
+```
