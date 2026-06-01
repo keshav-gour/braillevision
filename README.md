@@ -1,19 +1,50 @@
-# BrailleVision AI
-### Real-time Braille to Text and Speech Converter
+# 👁️ BrailleVision AI
 
-An AI-powered accessibility application that uses a camera to detect 
-physical Braille labels in real time, decode them into English text, 
-and read them aloud for visually impaired users.
+**Bridging the accessibility gap with real-time Braille-to-Text & Audio translation.**
 
-**Built for BrailleVision Hackathon 2026**
+BrailleVision AI is a dual-engine computer vision platform designed to translate physical Braille (embossed or handwritten) into digital text and auditory speech. Built for the BrailleVision Hackathon 2026.
 
-## Tech Stack
-- YOLOv8 Nano — Braille cell detection
-- OpenCV — image preprocessing + dot grid analysis  
-- Flask — REST API backend
-- React.js — frontend UI
-- pyttsx3 — offline text to speech
+## 🚀 Features
+* **Omni-Channel Input:** Live Camera streaming, Image upload, and Video frame analysis.
+* **Custom AI Model:** Trained YOLOv8 object detection for 26 Braille cell classes.
+* **Deterministic Fallback:** OpenCV geometric Hough Circle detection for challenging lighting conditions.
+* **Spatial Text Reconstruction:** Custom algorithm to sort detected letters into proper, readable sentences.
+* **Native Audio:** Integrated Text-to-Speech (TTS) for instant auditory feedback.
 
-## How to Run
-pip install -r requirements.txt
+---
+
+## 🛠️ Tech Stack
+* **Frontend:** React.js, HTML5 Canvas, WebRTC
+* **Backend:** Python 3.12, Flask, Flask-CORS
+* **Machine Learning:** PyTorch, Ultralytics YOLOv8
+* **Computer Vision:** OpenCV, NumPy
+
+---
+
+## 💻 How to Run Locally
+
+### Prerequisites
+Make sure you have **Python 3.12+** and **Node.js** installed on your machine. 
+
+### 1. Backend Setup (Python/Flask)
+Open a terminal and navigate to the root directory of the project.
+
+```bash
+# Create and activate a virtual environment (optional but recommended)
+python -m venv .venv
+source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+
+# Install the required Python packages
+pip install flask flask-cors gtts ultralytics opencv-python
+
+# Start the Flask API server
 python app.py
+
+# Move into the frontend directory
+cd frontend
+
+# Install Node dependencies
+npm install axios
+
+# Start the React development server
+npm start
